@@ -13,16 +13,6 @@ const indexController ={
     },
     miPerfil: function(req, res){
         return res.render('miPerfil')
-    },
-    detallePost: function(req, res){
-        return res.render('detallePost')
-    },
-    detalleUsuario: function(req, res){
-        return res.render('detalleUsuario')
-    },
-    resultadoBusqueda: function(req, res){
-        return res.render('resultadoBusqueda')
     }
-
 }
 module.exports = indexController;
