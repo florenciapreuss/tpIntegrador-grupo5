@@ -1,21 +1,22 @@
 var express = require('express');
 var router = express.Router();
+const indexController = require('../controllers/indexController')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
-router.get('/registro', function(req, res, next) {
-  res.render('registracion');
-});
-router.get('/login', function(req, res, next) {
-  res.render('login');
-});
-router.get('/agregarPost', function(req, res, next) {
-  res.render('agregarPost');
-});
-router.get('/perfil', function(req, res, next) {
-  res.render('miPerfil');
-});
+router.get('/', indexController.index) 
+
+router.get('/registro', indexController.registro)
+
+router.get('/login', indexController.login)
+
+router.get('/agregarPost', indexController.agregarPost)
+
+router.get('/miPerfil', indexController.miPerfil)
+
+router.get('/detallePost/:id', indexController.detallePost)
+
+router.get('/detalleUsuario/:id', indexController.detalleUsuario)
+
+router.get('/resultadoBusqueda/:usuario', indexController.resultadoBusqueda)
 
 module.exports = router;
