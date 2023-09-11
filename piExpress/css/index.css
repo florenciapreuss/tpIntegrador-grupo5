@@ -73,10 +73,13 @@ header {
 .menu i {
     font-size: 25px;
 }
+.main-header{
+    background-color: #E8DED1;
+}
 
 /* Main */
 main {
-    background-color: #fafafa;
+    background-color: #D1C0A8;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -91,7 +94,7 @@ main {
 
 /* post */
 .post{
-    background-color: #fff;
+    background-color: #EDE8E0;
     border: 1px solid #ddd;
     border-radius: 10px;
     color: #777;
@@ -157,6 +160,7 @@ main {
     background: #fff;
     border-top: 1px solid #ddd;
     padding: 20px 10px;
+    background-color: #E8DED1;
 }
 .social li {
     margin-right: 20px;
