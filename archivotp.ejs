@@ -1,0 +1,102 @@
+EN AGREGARPOST.EJS
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head")%>
+
+<body>
+    <%-include("./partials/header")%>
+
+    <main>
+        <section class="center main-content">
+        <h1>Nuevo Post</h1>
+        <form action="/" method="get">
+            <input type="text" name="imagen" placeholder="Pega la url de tu imagen">
+            <input type="text" name="pie_post" placeholder="Agrega un pie de post">
+            <button type="submit">Subir imagen</button>
+        </form>
+        </section>
+    </main>
+
+    <%-include("./partials/footer")%>
+
+</body>
+
+</html>
+
+EN MI PERFIL.EJS
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head")%>
+
+<body>
+    <%-include("./partials/header")%>
+
+    <main>
+        <div class="user-detail container">
+            <section class="top main-content">
+                <img class="profile" src="https://via.placeholder.com/100x100" alt="">
+                <div class="info-usuario">
+                    <p><%= usuario.email %></p> 
+                    <a class="follow" href="/editarPerfil"><i class="fa-solid fa-user-gear"></i></a>
+                    <ul class="meta">
+                        <li>2 posts</li>
+                        <li>200 seguidores</li>
+                        <li>300 seguidos</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="bottom">
+                <% for( let i = 0; i < posteos.length; i++ ) { %>
+                    <article class="post">
+                        <a href="/users/detallePosteo">
+                            <img src="<%= posteos.nombre_imagen %>">
+                        </a>
+                    </article>
+                    <ul>
+                        <% for( let j = 0; j < posteos.comentario.length; j++ ) { %>
+                            <li>
+                                <a href="/users/detalleUsuario<%= posteos[i].comentario[j].id_usuario %>"><%= posteos[i].comentario[j].email_usuario %></a>
+                                <span><%= posteos[i].comentario[j].texto_comentario %></span>
+                            </li>
+                        <% } %>
+                    </ul>
+                <% } %>
+            </section>
+        </div>
+    </main>
+
+    <%-include("./partials/footer")%>
+</body>
+
+</html>
+
+EN REGISTRACION.EJS
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head")%>
+
+<body>
+    <%-include("./partials/header")%>
+
+    <main>
+        <section class="center main-content">
+        <h1>Registrate</h1>
+        <form class= "form" action="/login" method="get">
+            <input type="email" name="email" placeholder="Direccion de email">
+            <input type="date" name="date" placeholder="Fecha de nacimiento">
+            <input type="number" name="dni" placeholder="Numero de dni">
+            <input type="password" name="password" placeholder="Ingresa la contraseña deseada">
+            <input type="text" name="fotoPerfil" placeholder="inserta tu foto de perfil">
+            <button type="submit">Crear usuario</button>
+        </form>
+        </section>
+    </main>
+
+    <%-include("./partials/footer")%>
+
+</body>
+
+</html>

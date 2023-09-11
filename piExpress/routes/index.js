@@ -13,4 +13,6 @@ router.get('/agregarPost', indexController.agregarPost);
 
 router.get('/miPerfil', indexController.miPerfil);
 
+router.get ('/editarPerfil', indexController.editarPerfil);
+
 module.exports = router;
