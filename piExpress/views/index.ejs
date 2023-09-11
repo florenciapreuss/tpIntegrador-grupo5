@@ -7,146 +7,42 @@
     <%-include("./partials/header")%>
     <main>
         <section class="center main-content">
-            <article class="post">
-                <div class="info-usuario ">
-                    <img src="https://via.placeholder.com/40" alt="">
-                    <h4>
-                        <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                    </h4>
-                </div>
-                <div class="post-body">
-                    <a href="http://localhost:3000/detallePost">
-                        <img src="https://via.placeholder.com/500x600" alt="">
-                    </a>
-                </div>
-                <ul class="post-reacciones">
-                    <li>
-                        <i class="fa-regular fa-heart"></i>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-comment"></i>
-                    </li>
-                </ul>
-                <div class="post-comentarios">
-                    <h4>Comentarios</h4>
-                    <ul>
+            <% for( let i = 0; i < posteos.length; i++) { %>
+                <article class="post">
+                    <div class="info-usuario ">
+                        <img src="https://via.placeholder.com/40" alt="">
+                        <h4>
+                            <a href="/users/detalleUsuario/<%= posteos[i].id_usuario %>"><%= posteos[i].email_usuario %></a>
+                        </h4>
+                    </div>
+                    <div class="post-body">
+                        <a href="/users/detallePost<%= posteos[i].id_posteo %>">
+                            <img src="<%= posteos[i].nombre_imagen %>" alt="">
+                        </a>
+                    </div>
+                    <ul class="post-reacciones">
                         <li>
-                            <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
+                            <i class="fa-regular fa-heart"></i>
                         </li>
                         <li>
-                            <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
+                            <i class="fa-regular fa-comment"></i>
                         </li>
-                        <a href="http://localhost:3000/detallePost">Ver más...</a>
                     </ul>
-                </div>
-            </article>
-            <article class="post">
-                <div class="info-usuario ">
-                    <img src="https://via.placeholder.com/40" alt="">
-                    <h4>
-                        <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                    </h4>
-                </div>
-                <div class="post-body">
-                    <a href="http://localhost:3000/detallePost">
-                        <img src="https://via.placeholder.com/500x600" alt="">
-                    </a>
-                </div>
-                <ul class="post-reacciones">
-                    <li>
-                        <i class="fa-regular fa-heart"></i>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-comment"></i>
-                    </li>
-                </ul>
-                <div class="post-comentarios">
-                    <h4>Comentarios</h4>
-                    <ul>
-                        <li>
-                            <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
-                        </li>
-                        <li>
-                            <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
-                        </li>
-                        <a href="http://localhost:3000/detallePost">Ver más...</a>
-                    </ul>
-                </div>
-            </article>
-            <article class="post">
-                <div class="info-usuario ">
-                    <img src="https://via.placeholder.com/40" alt="">
-                    <h4>
-                        <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                    </h4>
-                </div>
-                <div class="post-body">
-                    <a href="http://localhost:3000/detallePost">
-                        <img src="https://via.placeholder.com/500x600" alt="">
-                    </a>
-                </div>
-                <ul class="post-reacciones">
-                    <li>
-                        <i class="fa-regular fa-heart"></i>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-comment"></i>
-                    </li>
-                </ul>
-                <div class="post-comentarios">
-                    <h4>Comentarios</h4>
-                    <ul>
-                        <li>
-                            <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
-                        </li>
-                        <li>
-                            <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
-                        </li>
-                        <a href="http://localhost:3000/detallePost">Ver más...</a>
-                    </ul>
-                </div>
-            </article>
-            <article class="post">
-                <div class="info-usuario ">
-                    <img src="https://via.placeholder.com/40" alt="">
-                    <h4>
-                        <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                    </h4>
-                </div>
-                <div class="post-body">
-                    <a href="http://localhost:3000/detallePost">
-                        <img src="https://via.placeholder.com/500x600" alt="">
-                    </a>
-                </div>
-                <ul class="post-reacciones">
-                    <li>
-                        <i class="fa-regular fa-heart"></i>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-comment"></i>
-                    </li>
-                </ul>
-                <div class="post-comentarios">
-                    <h4>Comentarios</h4>
-                    <ul>
-                        <li>
-                            <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
-                        </li>
-                        <li>
-                            <a href="http://localhost:3000/detalleUsuario">Usuario</a>
-                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
-                        </li>
-                        <a href="http://localhost:3000/detallePost">Ver más...</a>
-                    </ul>
-                </div>
-            </article>
+                    <div class="post-comentarios">
+                        <h4>Comentarios</h4>
+                        <ul>
+                            <% for( let j = 0; j < posteos[j].comentario.length; j++ ) { %>
+                                <li>
+                                    <a href="/users/detalleUsuario<%= posteos[i].comentario[j].id_usuario %>"><%= posteos[i].comentario[j].email_usuario %></a>
+                                    <span><%= posteos[i].comentario[j].texto_comentario %></span>
+                                </li>
+                            <% } %>
+                            <a href="/users/detallePost<%= posteos[i].id_posteo %>">Ver más...</a>
+                        </ul>
+                    </div>
+                </article>
+            <% } %>
+            
         </section>    
     </main>
 
