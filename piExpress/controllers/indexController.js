@@ -14,13 +14,13 @@ const indexController ={
     },
     miPerfil: function(req, res){
         id_mi_usuario = 1;
-        let posteos_usuario=[];
+        let posteos_usuario= [];
         for (let i = 0; i < datos.posteos.length; i++) {
             if (datos.posteos[i].id_usuario == id_mi_usuario) {
-                posteos_usuario += datos.posteos[i];
+                posteos_usuario.push(datos.posteos[i]);
             }
         }
-        return res.render('miPerfil', {usuario: datos.usuarios[0], posteos: posteos_usuario})
+        return res.render('miPerfil', {usuario: datos.usuarios[0], posteos_usuario: posteos_usuario})
     },
     editarPerfil: function(req, res){
         return res.render('editarPerfil')
