@@ -8,14 +8,17 @@
             <main>
                 <section class="center main-content">
                     <h1>Resultados de búsqueda.</h1>
-                    <div>
-                        <a href="/users/detalleUsuario">
-                            <h2>
-                                <%= usuario.email %>
-                            </h2>
-                            <img src="<%= usuario.foto_perfil %>" alt="foto de perfil">
-                        </a>
-                    </div>
+                    <% for( let i = 0; i < usuarios.length; i++ ) { %>
+                        <div>
+                            <a href="/users/detalleUsuario">
+                                <h2>
+                                    <%= usuarios[i].email %>
+                                </h2>
+                                <img src="<%= usuarios[i].foto_perfil %>" alt="foto de perfil">
+                            </a>
+                        </div>
+                    <% } %>
+                    
                 </section>
             </main>
             <%-include("./partials/footer")%>
