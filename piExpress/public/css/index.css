@@ -305,3 +305,33 @@ main {
     height: 110px;
     border-radius: 60%;
 }
+
+/* Posteos: */
+.post{
+    margin-top: 50px;
+    margin-bottom: 0%;
+}
+
+/* Formulario de registración: */
+#Registrate{
+    margin-top: 60px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 35px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputRegistro{
+    width: 350px;
+    height: 40px;
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+}
+
+
+
