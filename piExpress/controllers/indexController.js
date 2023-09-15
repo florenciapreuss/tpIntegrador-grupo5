@@ -1,7 +1,7 @@
 const datos = require("../db/data");
 const indexController ={
     index: function(req, res){
-        return res.render('index',{posteos: datos.posteos})
+        return res.render('index',{posteos: datos.posteos, usuarios: datos.usuarios})
     },
     registro: function(req, res){
         return res.render('registracion')

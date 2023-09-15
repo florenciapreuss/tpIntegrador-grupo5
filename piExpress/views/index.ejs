@@ -10,13 +10,17 @@
             <% for( let i = 0; i < posteos.length; i++) { %>
                 <article class="post">
                     <div class="info-usuario ">
-                        <img src="https://via.placeholder.com/40" alt="">
+                        <% for( let j = 0; j < usuarios.length; j++ ) { %>
+                            <% if (usuarios[j].id_usuario == posteos[i].id_usuario) { %>
+                                <img src="<%= usuarios[j].foto_perfil %>" alt="foto_perfil">
+                            <% } %>
+                        <% } %>
                         <h4>
                             <a href="/users/detalleUsuario/<%= posteos[i].id_usuario %>"><%= posteos[i].email_usuario %></a>
                         </h4>
                     </div>
                     <div class="post-body">
-                        <a href="/users/detallePost<%= posteos[i].id_posteo %>">
+                        <a href="/users/detallePost/<%= posteos[i].id_posteo %>">
                             <img src="<%= posteos[i].nombre_imagen %>" alt="">
                         </a>
                     </div>
@@ -33,11 +37,11 @@
                         <ul>
                             <% for( let j = 0; j < posteos[j].comentario.length; j++ ) { %>
                                 <li>
-                                    <a href="/users/detalleUsuario<%= posteos[i].comentario[j].id_usuario %>"><%= posteos[i].comentario[j].email_usuario %></a>
+                                    <a href="/users/detalleUsuario/<%= posteos[i].comentario[j].id_usuario %>"><%= posteos[i].comentario[j].email_usuario %></a>
                                     <span><%= posteos[i].comentario[j].texto_comentario %></span>
                                 </li>
                             <% } %>
-                            <a href="/users/detallePost<%= posteos[i].id_posteo %>">Ver más...</a>
+                            <a href="/users/detallePost/<%= posteos[i].id_posteo %>">Ver más...</a>
                         </ul>
                     </div>
                 </article>
