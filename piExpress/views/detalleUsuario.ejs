@@ -3,54 +3,39 @@
 
 <%-include("./partials/head")%>
 
-<body>
-    <%-include("./partials/header")%>
+    <body>
+        <%-include("./partials/header")%>
 
-    <main>
-        <div class="user-detail container">
-            <section class="top main-content">
-                <img class="profile" src="https://via.placeholder.com/100x100" alt="">
-                <div class="info-usuario">
-                    <p>Nombre de usuario</p> 
-                    <a class="follow" href="">seguir</a>
-                    <ul class="meta">
-                        <li>100 post</li>
-                        <li>200 seguidores</li>
-                        <li>300 seguidos</li>
-                    </ul>
+            <main>
+                <div class="user-detail container">
+                    <section class="top main-content">
+                        <img class="profile" src="<%= usuario.foto_perfil %>" alt="foto de perfil">
+                        <div class="info-usuario">
+                            <p>
+                                <%= usuario.email %>
+                            </p>
+                            <a class="follow" href="">seguir</a>
+                            <ul class="meta">
+                                <li>100 post</li>
+                                <li>200 seguidores</li>
+                                <li>300 seguidos</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="bottom">
+                        <% for( let i=0; i < posteos_usuario.length; i++ ) { %>
+                            <article class="post">
+                                <a href="users/detallePost/<%= posteos_usuario[i].id_posteo %>">
+                                    <img src="<%= posteos_usuario[i].nombre_imagen %>" alt="imagen post">
+                                    <p>Ver comentarios...</p>
+                                </a>
+                            </article>
+                            <% } %>
+                    </section>
                 </div>
-            </section>
-            <section class="bottom">
-                <article class="post">
-                    <a href="users/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="users/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="users/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="users/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="users/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-            </section>
-        </div>
-    </main>
+            </main>
 
-    <%-include("./partials/footer")%>
-</body>
+            <%-include("./partials/footer")%>
+    </body>
 
 </html>

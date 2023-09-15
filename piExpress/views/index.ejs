@@ -10,7 +10,11 @@
             <% for( let i = 0; i < posteos.length; i++) { %>
                 <article class="post">
                     <div class="info-usuario ">
-                        <img src="https://via.placeholder.com/40" alt="">
+                        <% for( let j = 0; j < usuarios.length; j++ ) { %>
+                            <% if (usuarios[j].id_usuario == posteos[i].id_usuario) { %>
+                                <img src="<%= usuarios[j].foto_perfil %>" alt="foto_perfil">
+                            <% } %>
+                        <% } %>
                         <h4>
                             <a href="/users/detalleUsuario/<%= posteos[i].id_usuario %>"><%= posteos[i].email_usuario %></a>
                         </h4>
