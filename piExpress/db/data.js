@@ -4,7 +4,7 @@ const data = {
             id_usuario: 1,
             email: "antocaste@hotmail.com",
             contraseña: "contraseña",
-            foto_perfil: "../img/fotoPerfil-1.jpeg",
+            foto_perfil: "../../../img/fotoPerfil-1.jpeg",
             fecha: "2004-09-22",
             dni: "46573891",
         },
@@ -12,7 +12,7 @@ const data = {
             id_usuario: 2,
             email: "pepito@hotmail.com",
             contraseña: "galletita",
-            foto_perfil: "../img/fotoPerfil-2.jpeg",
+            foto_perfil: "../../../img/fotoPerfil-2.jpeg",
             fecha: "2001-02-24",
             dni: "40433891",
         },
@@ -20,7 +20,7 @@ const data = {
             id_usuario: 3,
             email: "juan@hotmail.com",
             contraseña: "pepito",
-            foto_perfil: "../img/fotoPerfil-3.jpeg",
+            foto_perfil: "../../../img/fotoPerfil-3.jpeg",
             fecha: "1976-06-02",
             dni: "18467891",
         },
@@ -28,7 +28,7 @@ const data = {
             id_usuario: 4,
             email: "manuel@hotmail.com",
             contraseña: "brianluis",
-            foto_perfil: "../img/fotoPerfil-4.jpeg",
+            foto_perfil: "../../../img/fotoPerfil-4.jpeg",
             fecha: "1989-05-14",
             dni: "33667855",
         },
@@ -36,7 +36,7 @@ const data = {
             id_usuario: 5,
             email: "pepa@hotmail.com",
             contraseña: "sanandres123",
-            foto_perfil: "../img/fotoPerfil-5.jpeg",
+            foto_perfil: "../../../img/fotoPerfil-5.jpeg",
             fecha: "1997-12-31",
             dni: "44657825",
         }
@@ -44,7 +44,7 @@ const data = {
     posteos: [
         {
             id_posteo: 1,
-            nombre_imagen: "../img/posteo-1.jpeg",
+            nombre_imagen: "../../../img/posteo-1.jpeg",
             pie_post: "En la playa",
             id_usuario: 2,
             email_usuario: "pepito@hotmail.com",
@@ -73,7 +73,7 @@ const data = {
         },
         {
             id_posteo: 2,
-            nombre_imagen: "../img/posteo-2.jpeg",
+            nombre_imagen: "../../../img/posteo-2.jpeg",
             pie_post: "Con mi amiga!",
             id_usuario: 4,
             email_usuario: "manuel@hotmail.com",
@@ -102,7 +102,7 @@ const data = {
         },
         {
             id_posteo: 3,
-            nombre_imagen: "../img/posteo-3.jpeg",
+            nombre_imagen: "../../../img/posteo-3.jpeg",
             pie_post: "Esquiando!!!",
             id_usuario: 3,
             email_usuario: "juan@hotmail.com",
@@ -131,7 +131,7 @@ const data = {
         },
         {
             id_posteo: 4,
-            nombre_imagen: "../img/posteo-4.jpeg",
+            nombre_imagen: "../../../img/posteo-4.jpeg",
             pie_post: "Vamos Bocaaa!!!",
             id_usuario: 1,
             email_usuario: "antocaste@hotmail.com",
@@ -160,7 +160,7 @@ const data = {
         },
         {
             id_posteo: 5,
-            nombre_imagen: "../img/posteo-5.jpeg",
+            nombre_imagen: "../../../img/posteo-5.jpeg",
             pie_post: "Que lindo atardecer",
             id_usuario: 5,
             email_usuario: "pepa@hotmail.com",
@@ -189,7 +189,7 @@ const data = {
         },
         {
             id_posteo: 6,
-            nombre_imagen: "../img/posteo-6.jpeg",
+            nombre_imagen: "../../../img/posteo-6.jpeg",
             pie_post: "En el paraiso",
             id_usuario: 2,
             email_usuario: "pepito@hotmail.com",
@@ -218,7 +218,7 @@ const data = {
         },
         {
             id_posteo: 7,
-            nombre_imagen: "../img/posteo-7.jpeg",
+            nombre_imagen: "../../../img/posteo-7.jpeg",
             pie_post: "Feliz cumple Ma!",
             id_usuario: 3,
             email_usuario: "juan@hotmail.com",
@@ -247,7 +247,7 @@ const data = {
         },
         {
             id_posteo: 8,
-            nombre_imagen: "../img/posteo-8.jpeg",
+            nombre_imagen: "../../../img/posteo-8.jpeg",
             pie_post: "Viendo a la nada pensando en todo",
             id_usuario: 1,
             email_usuario: "antocaste@hotmail.com",
@@ -276,7 +276,7 @@ const data = {
         },
         {
             id_posteo: 9,
-            nombre_imagen: "../img/posteo-9.jpeg",
+            nombre_imagen: "../../../img/posteo-9.jpeg",
             id_usuario: 4,
             email_usuario: "manuel@hotmail.com",
             comentario: [
@@ -304,7 +304,7 @@ const data = {
         },
         {
             id_posteo: 10,
-            nombre_imagen: "../img/posteo-10.jpeg",
+            nombre_imagen: "../../../img/posteo-10.jpeg",
             pie_post: "Falso veranito",
             id_usuario: 5,
             email_usuario: "pepa@hotmail.com",
