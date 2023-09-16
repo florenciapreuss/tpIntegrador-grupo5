@@ -12,7 +12,7 @@
                     <div class="info-usuario ">
                         <% for( let j = 0; j < usuarios.length; j++ ) { %>
                             <% if (usuarios[j].id_usuario == posteos[i].id_usuario) { %>
-                                <img src="<%= usuarios[j].foto_perfil %>" alt="foto_perfil">
+                                <img class="fotosPerfilIndex" src="<%= usuarios[j].foto_perfil %>" alt="foto_perfil">
                             <% } %>
                         <% } %>
                         <h4>

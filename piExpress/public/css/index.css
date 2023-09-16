@@ -305,3 +305,59 @@ main {
     height: 110px;
     border-radius: 60%;
 }
+
+/* Posteos: */
+.post{
+    margin-top: 50px;
+    margin-bottom: 0%;
+}
+
+/* Formulario de registración: */
+.tituloFormulario{
+    margin-top: 60px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 35px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputFormulario{
+    width: 450px;
+    height: 35px;
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    color: #777;
+    border: 3px solid #777;
+}
+
+/* Fotos de perfil: */
+.fotosPerfilIndex{
+    width: 40px;
+    height: 40px;
+}
+
+/* Mi perfil: */
+.profile{
+    width: 100px;
+    height: 100px;
+    margin-top: 60px;
+}
+
+.postMiPerfil{
+    display: flex;
+    justify-content: center;
+
+}
+
+/*Resultado búsqueda: */
+.imagenResultadoBusqueda{
+    width: 400px;
+    height: 300px;
+}
