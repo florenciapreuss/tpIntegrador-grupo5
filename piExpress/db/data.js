@@ -4,7 +4,7 @@ const data = {
             id_usuario: 1,
             email: "antocaste@hotmail.com",
             contraseña: "contraseña",
-            foto_perfil: "https://concepto.de/wp-content/uploads/2018/08/persona-e1533759204552.jpg",
+            foto_perfil: "../../../img/fotoPerfil-1.jpeg",
             fecha: "2004-09-22",
             dni: "46573891",
         },
@@ -12,7 +12,7 @@ const data = {
             id_usuario: 2,
             email: "pepito@hotmail.com",
             contraseña: "galletita",
-            foto_perfil: "https://aishlatino.com/wp-content/uploads/2021/11/que-tipo-de-persona-te-gustaria-ser-730x411-SP.jpg",
+            foto_perfil: "../../../img/fotoPerfil-2.jpeg",
             fecha: "2001-02-24",
             dni: "40433891",
         },
@@ -20,7 +20,7 @@ const data = {
             id_usuario: 3,
             email: "juan@hotmail.com",
             contraseña: "pepito",
-            foto_perfil: "https://i0.wp.com/sonria.com/wp-content/uploads/2016/08/2165947w620.jpg?fit=620%2C348&ssl=1",
+            foto_perfil: "../../../img/fotoPerfil-3.jpeg",
             fecha: "1976-06-02",
             dni: "18467891",
         },
@@ -28,7 +28,7 @@ const data = {
             id_usuario: 4,
             email: "manuel@hotmail.com",
             contraseña: "brianluis",
-            foto_perfil: "https://cdn.pixabay.com/photo/2022/06/17/20/39/person-7268693_1280.png",
+            foto_perfil: "../../../img/fotoPerfil-4.jpeg",
             fecha: "1989-05-14",
             dni: "33667855",
         },
@@ -36,7 +36,7 @@ const data = {
             id_usuario: 5,
             email: "pepa@hotmail.com",
             contraseña: "sanandres123",
-            foto_perfil: "https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg",
+            foto_perfil: "../../../img/fotoPerfil-5.jpeg",
             fecha: "1997-12-31",
             dni: "44657825",
         }
@@ -44,7 +44,7 @@ const data = {
     posteos: [
         {
             id_posteo: 1,
-            nombre_imagen: "https://images.unsplash.com/photo-1600377140286-dc1208a7ccf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2535&q=80",
+            nombre_imagen: "../../../img/posteo-1.jpeg",
             pie_post: "En la playa",
             id_usuario: 2,
             email_usuario: "pepito@hotmail.com",
@@ -73,7 +73,7 @@ const data = {
         },
         {
             id_posteo: 2,
-            nombre_imagen: "https://www.etapainfantil.com/wp-content/uploads/2023/06/Frases-bonitas-amiga.jpg.webp",
+            nombre_imagen: "../../../img/posteo-2.jpeg",
             pie_post: "Con mi amiga!",
             id_usuario: 4,
             email_usuario: "manuel@hotmail.com",
@@ -102,7 +102,7 @@ const data = {
         },
         {
             id_posteo: 3,
-            nombre_imagen: "https://images.ecestaticos.com/OxpI4-kDUl5UHLiOgkbsY16-YQs=/280x21:2273x1515/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F25c%2Fb70%2F10c%2F25cb7010c5625534143a25911cecb1d5.jpg",
+            nombre_imagen: "../../../img/posteo-3.jpeg",
             pie_post: "Esquiando!!!",
             id_usuario: 3,
             email_usuario: "juan@hotmail.com",
@@ -131,7 +131,7 @@ const data = {
         },
         {
             id_posteo: 4,
-            nombre_imagen: "https://www.losandes.com.ar/resizer/qFPyFyUdXKr9wYjFAfXRIrWqFn4=/980x640/smart/filters:quality(75):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/CFCBTZGWQVFF7P533GU3O44TQE.jpg",
+            nombre_imagen: "../../../img/posteo-4.jpeg",
             pie_post: "Vamos Bocaaa!!!",
             id_usuario: 1,
             email_usuario: "antocaste@hotmail.com",
@@ -160,7 +160,7 @@ const data = {
         },
         {
             id_posteo: 5,
-            nombre_imagen: "https://s2.abcstatics.com/abc/www/multimedia/bienestar/2023/07/10/atardecer-verano-1-R6funi5jYXxtpImvVtH33OO-758x531@abc.jpg",
+            nombre_imagen: "../../../img/posteo-5.jpeg",
             pie_post: "Que lindo atardecer",
             id_usuario: 5,
             email_usuario: "pepa@hotmail.com",
@@ -189,7 +189,7 @@ const data = {
         },
         {
             id_posteo: 6,
-            nombre_imagen: "https://e0.pxfuel.com/wallpapers/782/917/desktop-wallpaper-sceneries-background-cute-scenery.jpg",
+            nombre_imagen: "../../../img/posteo-6.jpeg",
             pie_post: "En el paraiso",
             id_usuario: 2,
             email_usuario: "pepito@hotmail.com",
@@ -218,7 +218,7 @@ const data = {
         },
         {
             id_posteo: 7,
-            nombre_imagen: "https://images.ctfassets.net/o65uf8qogksw/2i29woClzi0HiPQr2wzXAq/f37b6c0d16d562f594e46cb43824bd2e/relacion-de-madre-e-hija-desktop.jpg",
+            nombre_imagen: "../../../img/posteo-7.jpeg",
             pie_post: "Feliz cumple Ma!",
             id_usuario: 3,
             email_usuario: "juan@hotmail.com",
@@ -247,7 +247,7 @@ const data = {
         },
         {
             id_posteo: 8,
-            nombre_imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqhVWuN7vUBy4ogWmjA8Mi_cxEdcBCBJ1p7XyYLYChKzdN--Q9eC_n0s3oQO2HAFJh_rI&usqp=CAU",
+            nombre_imagen: "../../../img/posteo-8.jpeg",
             pie_post: "Viendo a la nada pensando en todo",
             id_usuario: 1,
             email_usuario: "antocaste@hotmail.com",
@@ -276,8 +276,7 @@ const data = {
         },
         {
             id_posteo: 9,
-            nombre_imagen: "https://img.freepik.com/foto-gratis/mujer-concentrada-meditando-naturaleza_1098-1412.jpg?w=1480&t=st=1694001845~exp=1694002445~hmac=abbc67e2d48ce68c852efeb1458a8b754cdde1c7b656166a09325e11ec62f03d",
-            pie_post: "Desconecta para conectar",
+            nombre_imagen: "../../../img/posteo-9.jpeg",
             id_usuario: 4,
             email_usuario: "manuel@hotmail.com",
             comentario: [
@@ -305,7 +304,7 @@ const data = {
         },
         {
             id_posteo: 10,
-            nombre_imagen: "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2022/05/30/16539065846169.jpg",
+            nombre_imagen: "../../../img/posteo-10.jpeg",
             pie_post: "Falso veranito",
             id_usuario: 5,
             email_usuario: "pepa@hotmail.com",
