@@ -1,4 +1,4 @@
-const datos = require("../db/data");
+const datos = require("../database/models");
 const usersController = { /* Creamos el objeto literal */
     detallePost: function(req, res){ /* Método con función anonima que tiene req y res como parametros */
         let id_posteo = req.params.id; /* Con la propiedad.params traemos el id de la url del posteo que tocó el usuario */
