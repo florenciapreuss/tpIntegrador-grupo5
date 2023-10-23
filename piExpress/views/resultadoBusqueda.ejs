@@ -8,13 +8,13 @@
             <main>
                 <section class="center main-content">
                     <h1 class="tituloFormulario">Resultados de búsqueda.</h1>
-                    <% for( let i = 0; i < usuarios.length; i++ ) { %>
+                    <% for( let i = 0; i < usuarios.length; i++ ) { %>  <!-- Desde el controlador mandamos usuarios (datos.usuarios en el objeto de datos) con todos los usuarios, recorremos todos los usuarios -->
                         <div>
                             <a href="/users/detalleUsuario">
                                 <h2>
-                                    <%= usuarios[i].email %>
+                                    <%= usuarios[i].email %> <!-- Coloca el mails de cada ususario uno abajo de otro -->
                                 </h2>
-                                <img class="imagenResultadoBusqueda" src="<%= usuarios[i].foto_perfil %>" alt="foto de perfil">
+                                <img class="imagenResultadoBusqueda" src="<%= usuarios[i].foto_perfil %>" alt="foto de perfil"> <!-- Coloca la foto de perfil de cada usuario -->
                             </a>
                         </div>
                     <% } %>

@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
+var app = express(); /* Me permite usar las diversas funciones y métodos que vienen con express */
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', indexRouter); /* Me permite configurar mis sitemas de ruteo */
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

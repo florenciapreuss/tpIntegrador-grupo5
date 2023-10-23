@@ -7,20 +7,20 @@
     <%-include("./partials/header")%>
     <main>
         <section class="center main-content">
-            <% for( let i = 0; i < posteos.length; i++) { %>
+            <% for( let i = 0; i < posteos.length; i++) { %>    <!-- Recorre todos los posteos -->
                 <article class="post">
                     <div class="info-usuario ">
-                        <% for( let j = 0; j < usuarios.length; j++ ) { %>
+                        <% for( let j = 0; j < usuarios.length; j++ ) { %> <!-- Como la propiedad posteo de la base de datos no tiene la informacion de la foro de perfil de quien hizo el posteo hago el for para que recorra a los usuarios y ver cuando coincide el id del usuario que hizo el posteo y así insterar la foto de perfil -->
                             <% if (usuarios[j].id_usuario == posteos[i].id_usuario) { %>
                                 <img class="fotosPerfilIndex" src="<%= usuarios[j].foto_perfil %>" alt="foto_perfil">
                             <% } %>
                         <% } %>
                         <h4>
-                            <a href="/users/detalleUsuario/<%= posteos[i].id_usuario %>"><%= posteos[i].email_usuario %></a>
+                            <a href="/users/detalleUsuario/<%= posteos[i].id_usuario %>"><%= posteos[i].email_usuario %></a> <!-- Insertamos el email del usuario que hizo el posteo -->
                         </h4>
                     </div>
                     <div class="post-body">
-                        <a href="/users/detallePost/<%= posteos[i].id_posteo %>">
+                        <a href="/users/detallePost/<%= posteos[i].id_posteo %>">   <!-- Insertamos el posteo en sí -->
                             <img src="<%= posteos[i].nombre_imagen %>" alt="">
                         </a>
                     </div>
@@ -35,13 +35,13 @@
                     <div class="post-comentarios">
                         <h4>Comentarios</h4>
                         <ul>
-                            <% for( let j = 0; j < posteos[j].comentario.length; j++ ) { %>
+                            <% for( let j = 0; j < posteos[j].comentario.length; j++ ) { %>     <!-- Recorre el array de comentario de posteo -->
                                 <li>
-                                    <a href="/users/detalleUsuario/<%= posteos[i].comentario[j].id_usuario %>"><%= posteos[i].comentario[j].email_usuario %></a>
-                                    <span><%= posteos[i].comentario[j].texto_comentario %></span>
+                                    <a href="/users/detalleUsuario/<%= posteos[i].comentario[j].id_usuario %>"><%= posteos[i].comentario[j].email_usuario %></a>    <!-- Inserto el email del usuario que hizo el comentario -->
+                                    <span><%= posteos[i].comentario[j].texto_comentario %></span> <!-- Inserto el comentario en sí -->
                                 </li>
                             <% } %>
-                            <a href="/users/detallePost/<%= posteos[i].id_posteo %>">Ver más...</a>
+                            <a href="/users/detallePost/<%= posteos[i].id_posteo %>">Ver más...</a>  <!-- Cuando presionamos ver mas nos lleva al id del posteo -->
                         </ul>
                     </div>
                 </article>

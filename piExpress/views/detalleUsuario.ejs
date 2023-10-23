@@ -4,7 +4,7 @@
 <%-include("./partials/head")%>
 
     <body>
-        <%-include("./partials/header")%>
+        <%-include("./partials/header")%> 
 
             <main>
                 <div class="user-detail container">
@@ -12,7 +12,7 @@
                         <img class="profile" src="<%= usuario.foto_perfil %>" alt="foto de perfil">
                         <div class="info-usuario">
                             <p>
-                                <%= usuario.email %>
+                                <%= usuario.email %> 
                             </p>
                             <a class="follow" href="">seguir</a>
                             <ul class="meta">
@@ -23,9 +23,9 @@
                         </div>
                     </section>
                     <section class="bottom">
-                        <% for( let i=0; i < posteos_usuario.length; i++ ) { %>
+                        <% for( let i=0; i < posteos_usuario.length; i++ ) { %> <!-- Mostramos los posteos de ese usuario específico -->
                             <article class="post">
-                                <a href="users/detallePost/<%= posteos_usuario[i].id_posteo %>">
+                                <a href="users/detallePost/<%= posteos_usuario[i].id_posteo %>">    <!-- Cuadno toco un post me lleva al detalle de este -->
                                     <img src="<%= posteos_usuario[i].nombre_imagen %>" alt="imagen post">
                                     <p>Ver comentarios...</p>
                                 </a>
