@@ -10,11 +10,8 @@
                 <div class="post-detail container">
                     <section class="center main-content post">
                         <div class="info-usuario">
-<<<<<<< HEAD
                             <img src="<%= usuario_posteo.foto_perfil %>" alt="foto de perfil"> <!-- Usuario posteo tiene la informacion del usuario (id de userscontroller) que hizo el posteo y con .foto de perfil muestro la foto de perfil de ese usuario -->
-=======
                             <img class="fotosPerfilIndex" src="<%= usuario_posteo.foto_perfil %>" alt="foto de perfil">
->>>>>>> 4b7525ace241b8194df68161b7dc3600e363c74c
                             <p><a href="users/detalleUsuario/<%= posteo.id_usuario %>">
                                     <%= posteo.email_usuario%>
                                 </a></p>
@@ -32,14 +29,14 @@
                                 <% for( let i=0; i < posteo.comentario.length; i++ ) { %> <!-- Recorrer los comentarios del posteo que estan en la variable que creamos en detallePost del userscontroller -->
                                     <article class="comment">
                                         <% for( let j=0; j < usuarios; j++ ) { %>
-                                            <% if (posteo.comentario[i].id_usuario==usuarios[j].id_usuario) { %><!-- Este tipo de tag ejs me permite crear código js en medio del html -->
+                                            <% if (posteo.comentario[i].id_usuario==usuarios[j].id_usuario) { %>
                                                 <img src="<%= usuarios[j].foto_perfil %>" alt="foto perfil">
                                                 <% } %>
                                                     <% } %>
                                                         <section class="content">
                                                             <a class="user"
                                                                 href="users/detalleUsuario/<%= posteo.comentario[i].id_usuario %>">
-                                                                <%= posteo.comentario[i].email_usuario %> <!-- Muestra el usuario de la persona que comentó y el comentario en sí -->
+                                                                <%= posteo.comentario[i].email_usuario %>
                                                             </a>
                                                             <span class="text">
                                                                 <%= posteo.comentario[i].texto_comentario %>
