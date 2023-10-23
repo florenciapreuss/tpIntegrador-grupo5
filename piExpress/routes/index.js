@@ -9,8 +9,6 @@ router.get('/registro', indexController.registro);
 
 router.get('/login', indexController.login);
 
-router.get('/agregarPost', indexController.agregarPost);
-
 router.get('/miPerfil', indexController.miPerfil);
 
 router.get ('/editarPerfil', indexController.editarPerfil);
