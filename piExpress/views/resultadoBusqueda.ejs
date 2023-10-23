@@ -10,7 +10,7 @@
                     <h1 class="tituloFormulario">Resultados de búsqueda.</h1>
                     <% for( let i = 0; i < usuarios.length; i++ ) { %>  <!-- Desde el controlador mandamos usuarios (datos.usuarios en el objeto de datos) con todos los usuarios, recorremos todos los usuarios -->
                         <div>
-                            <a href="/users/detalleUsuario">
+                            <a href="/users/detalleUsuario/<%=usuarios[i].id_usuario  %>">
                                 <h2>
                                     <%= usuarios[i].email %> <!-- Coloca el mails de cada ususario uno abajo de otro -->
                                 </h2>
