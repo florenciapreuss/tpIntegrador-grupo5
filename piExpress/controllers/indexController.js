@@ -9,9 +9,6 @@ const indexController ={
     login: function(req, res){
         return res.render('login')
     },
-    agregarPost: function(req, res){
-        return res.render('agregarPost')
-    },
     miPerfil: function(req, res){       /* Quremos mostrar el perfil específico de un usuario */
         id_mi_usuario = 1;          /* Creamos la variaable id mi usuario y le damos el valor 1 */
         let posteos_usuario= [];        /* Creamos un array vacío para qeu se almacenen los posteos de este usuario */
