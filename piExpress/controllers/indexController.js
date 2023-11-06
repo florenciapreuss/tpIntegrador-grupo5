@@ -1,7 +1,18 @@
 const datos = require("../database/models");
+const op = datos.Sequelize.Op;
 const indexController ={
-    index: function(req, res){          /* Método que posee una función anónima que tiene como parámetros req y res */
-        return res.render('index',{posteos: datos.posteos, usuarios: datos.usuarios}) /* A través de res. render renderizamos el view index y le pasmos la información de posteos y usuarios*/
+    index: function (req, res, next) {
+        datos.Posteo.findAll({
+            include: [
+                {association: "usuarios_id_posteo"},
+                {association: "comentarios_id_posteo", include: {association:"usuarios_id_comentario"}}
+            ]
+        })
+          .then((resultados) => {
+            return res.render('index', { posteos: resultados });
+          }).catch(function(error) {
+            return res.send(error)
+          });
     },
     registro: function(req, res){
         return res.render('registracion')
