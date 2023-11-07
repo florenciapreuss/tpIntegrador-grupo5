@@ -9,6 +9,7 @@ const indexController ={
             ]
         })
           .then((resultados) => {
+            console.log(resultados.usuarios_id_posteo);
             return res.render('index', { posteos: resultados });
           }).catch(function(error) {
             return res.send(error)
