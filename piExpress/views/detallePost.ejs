@@ -10,12 +10,12 @@
                 <div class="post-detail container">
                     <section class="center main-content post">
                         <div class="info-usuario">
-                            <img class="fotosPerfilIndex" src="<%= usuario_posteo.foto_perfil %>" alt="foto de perfil"> <!-- Usuario posteo tiene la informacion del usuario (id de userscontroller) que hizo el posteo y con .foto de perfil muestro la foto de perfil de ese usuario -->
-                            <p><a href="users/detalleUsuario/<%= posteo.id_usuario %>">
-                                    <%= posteo.email_usuario%>
+                            <img class="fotosPerfilIndex" src="<%= resultados.usuarios_id_posteo.foto_perfil %>" alt="foto de perfil"> 
+                            <p><a href="users/detalleUsuario/<%= resultados.id_usuario %>">
+                                    <%= resultados.nombre_usuario%>
                                 </a></p>
                         </div>
-                        <img class="photo" src="<%= posteo.nombre_imagen %>" alt="imagen post">
+                        <img class="photo" src="<%= resultados.nombre_imagen %>" alt="imagen post">
                     </section>
                     <section class="right">
                         <h4>Comentarios</h4>
@@ -25,20 +25,16 @@
                                 <button type="submit">Comentar</button>
                             </form>
                             <div>
-                                <% for( let i=0; i < posteo.comentario.length; i++ ) { %> <!-- Recorrer los comentarios del posteo que estan en la variable que creamos en detallePost del userscontroller -->
+                                <% for( let i=0; i < resultados.comentarios_id_posteo.length; i++ ) { %> 
                                     <article class="comment">
-                                        <% for( let j=0; j < usuarios; j++ ) { %>
-                                            <% if (posteo.comentario[i].id_usuario==usuarios[j].id_usuario) { %>
-                                                <img src="<%= usuarios[j].foto_perfil %>" alt="foto perfil">
-                                                <% } %>
-                                                    <% } %>
+                                                <img src="<%= resultados.comentarios_id_posteo[i].usuarios_id_comentario.foto_perfil %>" alt="foto perfil">
                                                         <section class="content">
                                                             <a class="user"
-                                                                href="users/detalleUsuario/<%= posteo.comentario[i].id_usuario %>">
-                                                                <%= posteo.comentario[i].email_usuario %>
+                                                                href="users/detalleUsuario/<%= resultados.comentarios_id_posteo[i].usuarios_id_comentario.id_usuario %>">
+                                                                <%= resultados.comentarios_id_posteo[i].usuarios_id_comentario.nombre_usuario %>
                                                             </a>
                                                             <span class="text">
-                                                                <%= posteo.comentario[i].texto_comentario %>
+                                                                <%=resultados.comentarios_id_posteo[i].texto_comentario %>
                                                             </span>
                                                         </section>
                                     </article>
