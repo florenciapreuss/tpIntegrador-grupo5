@@ -1,3 +1,5 @@
+<!-- NO FUNCIONAN NI LAS FOTOS DE PERFIL NI LOS COMENTARIOS. ESTAN MAL LAS RELACIONES? LA INFO LLEGA, CUANDO HACEMOS CONSOLE LOG EN CONTROLADOR SE IMPRIME LA INFO, PERO NO FUNCIONA -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +12,7 @@
             <% for( let i = 0; i < posteos.length; i++) { %>    <!-- Recorre todos los posteos -->
                 <article class="post">
                     <div class="info-usuario ">
-                        <img src="<%= posteos[i].usuarios_id_posteo.foto_perfil %>" alt="foto de perfil">
+                        <img src="<%= posteos[i].usuarios_id_posteo.foto_perfil %>" alt="foto de perfil"> 
                         <h4>
                             <a href="/users/detalleUsuario/<%= posteos[i].id_usuario %>"><%= posteos[i].nombre_usuario %></a> <!-- Insertamos el email del usuario que hizo el posteo -->
                         </h4>
@@ -31,10 +33,10 @@
                     <div class="post-comentarios">
                         <h4>Comentarios</h4>
                         <ul>
-                            <% for( let j = 0; j < posteos[j].usuarios_id_posteo.length; j++ ) { %>     <!-- Recorre el array de comentario de posteo -->
+                            <% for( let j = 0; j < posteos[i].comentarios_id_posteo.length; j++ ) { %>     <!-- Recorre el array de comentario de posteo -->
                                 <li>
-                                    <a href="/users/detalleUsuario/<%= posteos[i].usuarios_id_posteo[j].id_usuario %>"><%= posteos[i].usuarios_id_posteo[j].nombre_usuario %></a>    <!-- Inserto el email del usuario que hizo el comentario -->
-                                    <span><%= posteos[i].usuarios_id_posteo[j].texto_comentario %></span> <!-- Inserto el comentario en sí -->
+                                    <a href="/users/detalleUsuario/<%= posteos[i].comentarios_id_posteo[j].id_usuario%>"><%= posteos[i].comentarios_id_posteo[j].usuarios_id_comentario.nombre_usuario %></a>    <!-- Inserto el nombre del usuario que hizo el comentario -->
+                                    <span><%= posteos[i].comentarios_id_posteo[j].texto_comentario %></span> <!-- Inserto el comentario en sí -->
                                 </li>
                             <% } %>
                             <a href="/users/detallePost/<%= posteos[i].id_posteo %>">Ver más...</a>  <!-- Cuando presionamos ver mas nos lleva al id del posteo -->

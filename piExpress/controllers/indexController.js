@@ -9,7 +9,14 @@ const indexController ={
             ]
         })
           .then((resultados) => {
-            console.log(resultados.usuarios_id_posteo);
+            for (let index = 0; index < resultados.length; index++) {
+                for (let j = 0; j < resultados[index].comentarios_id_posteo.length; j++) {
+                    console.log(resultados[index].comentarios_id_posteo[j].id_usuario);
+                    
+                }
+                
+            }
+           // return res.send(resultados)
             return res.render('index', { posteos: resultados });
           }).catch(function(error) {
             return res.send(error)
