@@ -9,7 +9,7 @@
             <main>
                 <div class="user-detail container">
                     <section class="top main-content">
-                        <img class="profile" src="<%= usuario.foto_perfil %>" alt=""> <!--  -->
+                        <img class="profile" src="<%= usuario.foto_perfil %>" alt=""> 
                         <div class="info-usuario">
                             <p>
                                 <%= usuario.email %>
@@ -23,21 +23,21 @@
                         </div>
                     </section>
                     <section class="bottom">
-                        <% for( let i=0; i < posteos_usuario.length; i++ ) { %>     <!-- Recorre el array de posteos_usuario que creamos vacío en detalleUsuario en el userscontroller  -->
+                        <% for( let i=0; i < posteos_usuario.length; i++ ) { %>   
                             <article class="post">
-                                <a href="/users/detallePosteo/<%= posteos_usuario[i].id_posteo%>">  <!--  -->
-                                    <img src="<%= posteos_usuario[i].nombre_imagen %>">     <!--  -->
+                                <a href="/users/detallePosteo/<%= posteos_usuario[i].id_posteo%>">
+                                    <img src="<%= posteos_usuario[i].nombre_imagen %>"> 
                                 </a>
                             </article>
                             <ul>
-                                <% for( let j=0; j < posteos_usuario[i].comentario.length; j++ ) { %>   <!-- Recorre los comentarios de los dos posteos del usuario -->
+                                <% for( let j=0; j < posteos_usuario[i].comentario.length; j++ ) { %> 
                                     <li>
                                         <a
-                                            href="/users/detalleUsuario/<%= posteos_usuario[i].comentario[j].id_usuario%>"> <!-- Queremos que nos redirija al detalle del usuario que hizo el comentario   -->
-                                            <%= posteos_usuario[i].comentario[j].email_usuario %>   <!-- Inserta el email de la persona que comentó -->
+                                            href="/users/detalleUsuario/<%= posteos_usuario[i].comentario[j].id_usuario%>"> 
+                                            <%= posteos_usuario[i].comentario[j].email_usuario %> 
                                         </a>
                                         <span>
-                                            <%= posteos_usuario[i].comentario[j].texto_comentario %>    <!-- Inserta el comentario en sí -->
+                                            <%= posteos_usuario[i].comentario[j].texto_comentario %>
                                         </span>
                                     </li>
                                     <% } %>

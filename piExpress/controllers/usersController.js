@@ -10,7 +10,6 @@ const usersController = {
     }
     usuario.findByPk(id_usuario, relaciones)
     .then(function(resultados)  {
-      // return res.send(resultadosDetalleU)
       return res.render('detalleUsuario', { data: resultados});
    })
    .catch(function(error)  {
@@ -18,11 +17,11 @@ const usersController = {
 })
   },
   resultadoBusqueda: function(req, res){
-    return res.render('resultadoBusqueda', {usuarios: datos.usuarios})  /* Como no sabemos capturar la información de la url que llega a traves de un form mostramos todos los usuarios */
+    return res.render('resultadoBusqueda', {usuarios: datos.usuarios})
 } 
 }
 
 module.exports = usersController;
 
-/* Usamos .render() para renderizar la vista en el navegador */
+
 
