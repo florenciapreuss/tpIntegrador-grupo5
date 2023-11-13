@@ -1,13 +1,14 @@
 const datos = require("../database/models");
+let usuario = datos.Usuario;
 const usersController = { 
     detalleUsuario: function (req, res, next) {
-    let id = req.params.id
-    let relacion = {
+    let id_usuario = req.params.id
+    let relaciones = {
       include: [
         {association: "posteos_id_usuario"} 
       ]
     }
-    usuarios.findByPk(id, relacion)
+    usuario.findByPk(id_usuario, relaciones)
     .then(function(resultados)  {
       // return res.send(resultadosDetalleU)
       return res.render('detalleUsuario', { data: resultados});
