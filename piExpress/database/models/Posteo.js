@@ -43,7 +43,7 @@ module.exports = function(sequelize, dataTypes) {
         /*relacionamos posteo con el usuario */
         Posteo.belongsTo(models.Usuario,{
             as: "usuarios_id_posteo",
-            foreignKey: "id_posteo"
+            foreignKey: "id_usuario"
         })
         /*relacionamos posteo con los comentarios */
         Posteo.hasMany(models.Comentario, {

@@ -27,7 +27,7 @@
                             <div>
                                 <% for( let i=0; i < posteo.comentarios_id_posteo.length; i++ ) { %> 
                                     <article class="comment">
-                                                <img src="<%= posteo.comentarios_id_posteo[i].usuarios_id_comentario.foto_perfil %>" alt="foto perfil">
+                                                <img src="<%= posteo.comentarios_id_posteo[i].usuarios_id_comentario.foto_perfil %>" alt="foto perfil" class="fotosPerfilIndex">
                                                         <section class="content">
                                                             <a class="user"
                                                                 href="users/detalleUsuario/<%= posteo.comentarios_id_posteo[i].usuarios_id_comentario.id_usuario %>">

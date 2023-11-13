@@ -12,13 +12,13 @@
             <% for( let i = 0; i < posteos.length; i++) { %>    <!-- Recorre todos los posteos -->
                 <article class="post">
                     <div class="info-usuario ">
-                        <img src="<%= posteos[i].usuarios_id_posteo.foto_perfil %>" alt="foto de perfil"> 
+                        <img src="<%= posteos[i].usuarios_id_posteo.foto_perfil %>" alt="foto de perfil" class="fotosPerfilIndex"> 
                         <h4>
                             <a href="/users/detalleUsuario/<%= posteos[i].usuarios_id_posteo.id_usuario %>"><%= posteos[i].usuarios_id_posteo.nombre_usuario %></a> 
                         </h4>
                     </div>
                     <div class="post-body">
-                        <a href="/users/detallePost/<%= posteos[i].id_posteo %>">   <!-- Insertamos el posteo en sí -->
+                        <a href="/products/detallePost/<%= posteos[i].id_posteo %>">   <!-- Insertamos el posteo en sí -->
                             <img src="<%= posteos[i].nombre_imagen %>" alt="">
                         </a>
                     </div>
@@ -39,7 +39,7 @@
                                     <span><%= posteos[i].comentarios_id_posteo[j].texto_comentario %></span> <!-- Inserto el comentario en sí -->
                                 </li>
                             <% } %>
-                            <a href="/users/detallePost/<%= posteos[i].id_posteo %>">Ver más...</a>  <!-- Cuando presionamos ver mas nos lleva al id del posteo -->
+                            <a href="/products/detallePost/<%= posteos[i].id_posteo %>">Ver más...</a>  <!-- Cuando presionamos ver mas nos lleva al id del posteo -->
                         </ul>
                     </div>
                 </article>

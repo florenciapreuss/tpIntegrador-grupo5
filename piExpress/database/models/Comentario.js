@@ -39,12 +39,12 @@ module.exports = function(sequelize, dataTypes) {
         /*contraparte de la relacion posteo con los comentarios */
         Comentario.belongsTo(models.Posteo, {
             as: "posteos_id_comentario",
-            foreignKey: "id_comentario",
+            foreignKey: "id_posteo",
         })
         /*relacionamos usuarios con comentarios */
         Comentario.belongsTo(models.Usuario, {
             as: "usuarios_id_comentario",
-            foreignKey: "id_comentario",
+            foreignKey: "id_usuario",
         })
         
     
