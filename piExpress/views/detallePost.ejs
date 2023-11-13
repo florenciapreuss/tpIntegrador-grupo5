@@ -10,12 +10,12 @@
                 <div class="post-detail container">
                     <section class="center main-content post">
                         <div class="info-usuario">
-                            <img class="fotosPerfilIndex" src="<%= resultados.usuarios_id_posteo.foto_perfil %>" alt="foto de perfil"> 
-                            <p><a href="users/detalleUsuario/<%= resultados.id_usuario %>">
-                                    <%= resultados.nombre_usuario%>
+                            <img class="fotosPerfilIndex" src="<%= posteo.usuarios_id_posteo.foto_perfil %>" alt="foto de perfil"> 
+                            <p><a href="users/detalleUsuario/<%= posteo.usuarios_id_posteo.id_usuario %>">
+                                    <%= posteo.usuarios_id_posteo.nombre_usuario%>
                                 </a></p>
                         </div>
-                        <img class="photo" src="<%= resultados.nombre_imagen %>" alt="imagen post">
+                        <img class="photo" src="<%= posteo.nombre_imagen %>" alt="imagen post">
                     </section>
                     <section class="right">
                         <h4>Comentarios</h4>
@@ -25,16 +25,16 @@
                                 <button type="submit">Comentar</button>
                             </form>
                             <div>
-                                <% for( let i=0; i < resultados.comentarios_id_posteo.length; i++ ) { %> 
+                                <% for( let i=0; i < posteo.comentarios_id_posteo.length; i++ ) { %> 
                                     <article class="comment">
-                                                <img src="<%= resultados.comentarios_id_posteo[i].usuarios_id_comentario.foto_perfil %>" alt="foto perfil">
+                                                <img src="<%= posteo.comentarios_id_posteo[i].usuarios_id_comentario.foto_perfil %>" alt="foto perfil" class="fotosPerfilIndex">
                                                         <section class="content">
                                                             <a class="user"
-                                                                href="users/detalleUsuario/<%= resultados.comentarios_id_posteo[i].usuarios_id_comentario.id_usuario %>">
-                                                                <%= resultados.comentarios_id_posteo[i].usuarios_id_comentario.nombre_usuario %>
+                                                                href="users/detalleUsuario/<%= posteo.comentarios_id_posteo[i].usuarios_id_comentario.id_usuario %>">
+                                                                <%= posteo.comentarios_id_posteo[i].usuarios_id_comentario.nombre_usuario %>
                                                             </a>
                                                             <span class="text">
-                                                                <%=resultados.comentarios_id_posteo[i].texto_comentario %>
+                                                                <%=posteo.comentarios_id_posteo[i].texto_comentario %>
                                                             </span>
                                                         </section>
                                     </article>
