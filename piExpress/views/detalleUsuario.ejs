@@ -9,10 +9,10 @@
             <main>
                 <div class="user-detail container">
                     <section class="top main-content">
-                        <img class="profile" src="<%= usuario.foto_perfil %>" alt="foto de perfil">
+                        <img class="profile" src="<%= data.foto_perfil %>" alt="foto de perfil">
                         <div class="info-usuario">
                             <p>
-                                <%= usuario.email %> 
+                                <%= data.email %> 
                             </p>
                             <a class="follow" href="">seguir</a>
                             <ul class="meta">
@@ -23,10 +23,10 @@
                         </div>
                     </section>
                     <section class="bottom">
-                        <% for( let i=0; i < posteos_usuario.length; i++ ) { %> <!-- Mostramos los posteos de ese usuario específico -->
+                        <% for( let i=0; i < data.posteos_id_usuario.length; i++ ) { %> <!-- Mostramos los posteos de ese usuario específico -->
                             <article class="post">
-                                <a href="users/detallePost/<%= posteos_usuario[i].id_posteo %>">    <!-- Cuadno toco un post me lleva al detalle de este -->
-                                    <img src="<%= posteos_usuario[i].nombre_imagen %>" alt="imagen post">
+                                <a href="users/detallePost/<%= data.posteos_id_usuario[i].id_posteo %>">    <!-- Cuadno toco un post me lleva al detalle de este -->
+                                    <img src="<%= data.posteos_id_usuario[i].nombre_imagen %>" alt="imagen post">
                                     <p>Ver comentarios...</p>
                                 </a>
                             </article>
