@@ -6,8 +6,10 @@ const indexController = require('../controllers/indexController')
 router.get('/', indexController.index); /* Definimos las rutas que responden a las solicitudes del usuario y las asocia con el controlador */
 
 router.get('/registro', indexController.registro);
+router.post('/registro', indexController.store);
 
 router.get('/login', indexController.login);
+router.post('/login', indexController.loginPost)
 
 router.get('/miPerfil', indexController.miPerfil);
 

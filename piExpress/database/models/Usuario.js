@@ -17,7 +17,7 @@ module.exports = function(sequelize, dataTypes) {
         },
        
         contraseña: {
-            type: dataTypes.STRING(200)
+            type: dataTypes.STRING(250)
         },
         foto_perfil: {
             type: dataTypes.STRING(200)
