@@ -5,7 +5,7 @@ CREATE TABLE usuarios(
 id_usuario INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre_usuario VARCHAR(200) NOT NULL,
 email VARCHAR(200) NOT NULL,
-contraseña VARCHAR(200) NOT NULL,
+contrasenia VARCHAR(200) NOT NULL,
 foto_perfil VARCHAR(200)  NULL,
 fecha DATE NULL,
 dni INT UNIQUE NOT NULL,

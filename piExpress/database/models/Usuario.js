@@ -9,25 +9,23 @@ module.exports = function(sequelize, dataTypes) {
         
         },
         nombre_usuario: {
-            type: dataTypes.STRING(200)
+            type: dataTypes.STRING
             
         },
         email: {
-            type: dataTypes.STRING(200)
+            type: dataTypes.STRING
         },
-       
-        contraseña: {
-            type: dataTypes.STRING(250)
+        contrasenia: {
+            type: dataTypes.STRING
         },
         foto_perfil: {
-            type: dataTypes.STRING(200)
+            type: dataTypes.STRING
         },
         fecha: {
             type: dataTypes.DATE
         },
         dni: {
             type: dataTypes.INTEGER
-            
         },
         created_at: {
             type: dataTypes.DATE

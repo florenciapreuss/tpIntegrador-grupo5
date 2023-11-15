@@ -24,11 +24,11 @@ const indexController ={
         let user = {
             nombre_usuario: info.nombreUsuario,
             email: info.email,
-            constraseña: bcrypt.hashSync(info.password, 10),
+            contrasenia: bcrypt.hashSync(info.password, 12),
             foto_perfil: info.fotoPerfil,
             fecha: info.date,
             dni: info.dni,
-            remember_token: "false"
+
         };
 
         datos.Usuario.create(user)
@@ -38,22 +38,22 @@ const indexController ={
             return console.log(error);
         });
     },
-    login: function(req, res){ //FALTA CONTROL DE ACCESO
+    login: function(req, res){
         return res.render('login')
     },
     loginPost: (req, res) => {
-        let nombre_usuario = req.body.nombreUsuario;
-        let pass = req.body.password;               // clave del formulario
+        let nombreUsuario = req.body.nombreUsuario;
+        let pass = req.body.password;
 
         let criterio = {
-            where: [{nombre_usuario: nombre_usuario}]
+            where: [{nombre_usuario: nombreUsuario}]
         };
 
-        db.Usuario.findOne(criterio)
+        datos.Usuario.findOne(criterio)
         .then((result) => {
 
             if (result != null) {
-                let check = bcrypt.compareSync(pass, result.password)
+                let check = bcrypt.compareSync(pass, result.contrasenia);
                 
                 if (check) {
                     return res.redirect("/")
@@ -62,7 +62,7 @@ const indexController ={
                 }
 
             } else {
-                return res.send("No existe este usuario " + nombre_usuario)
+                return res.send("No existe este usuario " + nombreUsuario)
             }
             
         }).catch((err) => {
