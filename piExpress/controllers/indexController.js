@@ -11,6 +11,7 @@ const indexController ={
             ]
         })
           .then((resultados) => {
+            //return res.send(resultados)
             return res.render('index', { posteos: resultados });
           }).catch(function(error) {
             return res.send(error)
