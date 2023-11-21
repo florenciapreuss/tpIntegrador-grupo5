@@ -4,7 +4,12 @@
 <%-include("./partials/head")%>
 
     <body>
-        <%-include("./partials/header")%> 
+        <% if (locals.user != undefined) { %>
+            <%- include('./partials/headerLogueado') %>
+          <% } else { %>
+            <%- include('./partials/header') %>
+          <% } %>
+    
 
             <main>
                 <div class="user-detail container">
@@ -16,7 +21,7 @@
                             </p>
                             <a class="follow" href="">seguir</a>
                             <ul class="meta">
-                                <li>100 post</li>
+                                <li><%= data.posteos_id_usuario.length %></li>
                                 <li>200 seguidores</li>
                                 <li>300 seguidos</li>
                             </ul>

@@ -9,13 +9,15 @@
                 <input type="text" class="search-input" name="busqueda" placeholder="Buscar...">
             </form>
         </div>
+        <div>            
+            <h1 class="index-title">Bienvenido <%= locals.user.nombre_usuario%>!</h1>
+        </div>
         <div class="navbar-right">
             <ul class="menu">
-                <li><a href="/registro">Registro</a></li>
-                <li><a href="/login">Login</a></li>
                 <li><a href="http://localhost:3000/"><i class="fa-solid fa-house"></i></a></li>
                 <li><a href="/products/agregarPost"><i class="fa-regular fa-square-plus"></i></a></li>
-                <li><a href="/miPerfil"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="/miPerfil/<%= locals.user.id_usuario %>"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
             </ul>
         </div>
     </nav>

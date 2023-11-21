@@ -361,3 +361,8 @@ main {
     width: 400px;
     height: 300px;
 }
+
+.error{
+    font-size: medium;
+    color: red;
+}

@@ -4,7 +4,12 @@
 <%-include("./partials/head")%>
 
 <body>
-    <%-include("./partials/header")%>
+    <% if (locals.user != undefined) { %>
+        <%- include('./partials/headerLogueado') %>
+      <% } else { %>
+        <%- include('./partials/header') %>
+      <% } %>
+
     <main>
         <section class="center main-content">
             <% for( let i = 0; i < posteos.length; i++) { %>  
@@ -19,6 +24,7 @@
                         <a href="/products/detallePost/<%= posteos[i].id_posteo %>"> 
                             <img src="<%= posteos[i].nombre_imagen %>" alt="">
                         </a>
+                        <p><%= posteos[i].pie_post %></p>
                     </div>
                     <ul class="post-reacciones">
                         <li>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head")%> 
+
+<body>
+    <% if (locals.user != undefined) { %>
+        <%- include('./partials/headerLogueado') %>
+      <% } else { %>
+        <%- include('./partials/header') %>
+      <% } %>
+
+
+    <main>
+        <section class="center main-content">
+        <h1 class="tituloFormulario">Editar Post</h1>
+        <form class="form" action="/products/updatePost/<%= post.id_posteo %>" method="POST">
+            <input class="inputFormulario" type="url" name="nombre_imagen" placeholder="Pega la nueva url de tu imagen">
+            <input class="inputFormulario" type="text" name="pie_post" placeholder="Nuevo pie de post">
+            <button class="inputFormulario" type="submit">Editar</button>
+        </form>
+        </section>
+    </main>
+
+    <%-include("./partials/footer")%>
+
+</body>
+
+</html>

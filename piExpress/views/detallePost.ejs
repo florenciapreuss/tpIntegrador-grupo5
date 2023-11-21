@@ -4,7 +4,12 @@
 <%-include("./partials/head")%>
 
     <body>
-        <%-include("./partials/header")%>
+        <% if (locals.user != undefined) { %>
+            <%- include('./partials/headerLogueado') %>
+          <% } else { %>
+            <%- include('./partials/header') %>
+          <% } %>
+    
 
             <main>
                 <div class="post-detail container">
@@ -12,16 +17,24 @@
                         <div class="info-usuario">
                             <img class="fotosPerfilIndex" src="<%= posteo.usuarios_id_posteo.foto_perfil %>" alt="foto de perfil"> 
                             <p><a href="users/detalleUsuario/<%= posteo.usuarios_id_posteo.id_usuario %>">
-                                    <%= posteo.usuarios_id_posteo.nombre_usuario%>
-                                </a></p>
+                                    <%= posteo.usuarios_id_posteo.nombre_usuario%></a></p>
+                            <% if (locals.user != undefined && locals.user.id_usuario == posteo.usuarios_id_posteo.id_usuario) { %>
+                                    <form action="/products/borrarPost/<%= posteo.id_posteo %>">
+                                        <button type="submit" class="inputFormulario">Borrar posteo</button>
+                                    </form>
+                                    <form action="/products/editarPost/<%= posteo.id_posteo %>">
+                                        <button type="submit" class="inputFormulario">Editar posteo</button>
+                                    </form>
+                            <% } %>
                         </div>
                         <img class="photo" src="<%= posteo.nombre_imagen %>" alt="imagen post">
+                        <p><%= posteo.pie_post %></p>
                     </section>
                     <section class="right">
                         <h4>Comentarios</h4>
                         <section class="comments">
-                            <form action="" class="comment-form">
-                                <input type="text" class="input" placeholder="Agregar comentario">
+                            <form action="/products/agregarComentario/<%= posteo.id_posteo %>" class="comment-form" method="post">
+                                <input type="text" class="input" placeholder="Agregar comentario" name="comentario">
                                 <button type="submit">Comentar</button>
                             </form>
                             <div>

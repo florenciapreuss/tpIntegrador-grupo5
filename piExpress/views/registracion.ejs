@@ -4,11 +4,19 @@
 <%-include("./partials/head")%>
 
 <body>
-    <%-include("./partials/header")%>
+    <% if (locals.user != undefined) { %>
+        <%- include('./partials/headerLogueado') %>
+      <% } else { %>
+        <%- include('./partials/header') %>
+      <% } %>
+
 
     <main>
         <section class="center main-content">
         <h1 class="tituloFormulario">Registrate</h1>
+        <% if (error) { %>
+          <h2 class="error">ERROR: La contraseña debe tener al menos 2 caracteres o el email ya existe.</h2>
+         <% } %>
         <form class= "form" action="/registro" method="POST">
             <input class="inputFormulario" type="email" name="email" placeholder="Direccion de email">
             <input class="inputFormulario" type="name" name="nombreUsuario" placeholder="Nombre de usuario">

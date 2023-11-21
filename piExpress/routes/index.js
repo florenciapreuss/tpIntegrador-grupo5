@@ -11,7 +11,9 @@ router.post('/registro', indexController.store);
 router.get('/login', indexController.login);
 router.post('/login', indexController.loginPost)
 
-router.get('/miPerfil', indexController.miPerfil);
+router.get('/logout', indexController.logout);
+
+router.get('/miPerfil/:id', indexController.miPerfil);
 
 router.get ('/editarPerfil', indexController.editarPerfil);
 

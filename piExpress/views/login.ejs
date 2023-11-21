@@ -4,14 +4,23 @@
 <%-include("./partials/head")%>
 
 <body>
-    <%-include("./partials/header")%>
+    <% if (locals.user != undefined) { %>
+        <%- include('./partials/headerLogueado') %>
+      <% } else { %>
+        <%- include('./partials/header') %>
+      <% } %>
+
 
     <main>
         <section class="center main-content">
         <h1 class="tituloFormulario">Login</h1>
+        <% if (error) { %>
+          <h2 class="error">ERROR: El nombre de usuario o la contraseña son incorrectos</h2>
+         <% } %>
         <form class="form" action="/login" method="POST">
             <input class="inputFormulario" type="name" name="nombreUsuario" placeholder="Nombre de usuario">
             <input class="inputFormulario" type="password" name="password" placeholder="Contraseña">
+            <label for="rememberme">Recuerdame</label><input type="checkbox" name="rememberme" id="rememberme">
             <button class="inputFormulario" type="submit">Ingresar</button>
         </form>
         </section>
