@@ -26,13 +26,20 @@ borrarPost: function (req, res) {
   let criterio = {
     where: [{ id_posteo: id }]
   }
-  datos.Posteo.destroy(criterio)
+  datos.Comentario.destroy(criterio)
     .then(function (result) {
-      return res.redirect('/')
+      datos.Posteo.destroy(criterio)
+      .then(function (result) {
+        return res.redirect('/')
+      })
+      .catch(function (error) {
+        res.send(error)
+      })
     })
     .catch(function (error) {
       res.send(error)
     })
+  
 },
 editarPost: function (req, res) {
   let id = Number(req.params.id);
@@ -61,6 +68,23 @@ updatePost: function (req, res) {
     })
 },
 agregarComentario: function (req, res) {
+  if (req.session.user == undefined) {
+    return res.redirect('/login')
+  } else {
+    let comentario = req.body.comentario;
+    datos.Comentario.create({
+      id_posteo: req.params.id,
+      id_usuario: req.session.user.id_usuario,
+      texto_comentario: comentario
+    })
+    .then(function (result) {
+      let id_posteo = req.params.id;
+      return res.redirect('/products/detallePost/'+ id_posteo);
+    })
+    .catch(function (error) {
+      res.send(error)
+    })
+  }
 },
 detallePost: function(req, res, next){ 
     let id_posteo = req.params.id; 
