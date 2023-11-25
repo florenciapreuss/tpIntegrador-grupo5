@@ -13,13 +13,13 @@ const indexController ={
           }
         datos.Posteo.findAll(criterio)
           .then((resultados) => {
-            //return res.send(resultados)
             return res.render('index', { posteos: resultados });
           }).catch(function(error) {
             return res.send(error)
           });
     },
     registro: function(req, res){
+        hubo_error = false;
         return res.render('registracion', {error: hubo_error})
     },
     store: (req, res) => {
@@ -41,7 +41,8 @@ const indexController ={
         
                 datos.Usuario.create(user)
                 .then((result) => {
-                    return res.redirect("/login");
+                    hubo_error = false;
+                    return res.redirect("/login", {error:hubo_error});
                 }).catch((error) => {
                     return console.log(error);
                 });
@@ -111,7 +112,8 @@ const indexController ={
                 return res.send(error)
             }) 
         }else{
-                res.redirect('/login', {error: hubo_error});
+            hubo_error = false;
+            res.redirect('/login', {error: hubo_error});
             }
         
     },
@@ -119,7 +121,8 @@ const indexController ={
         if (req.session.user!=undefined) {
             return res.render('editarPerfil')
         }else {
-            return res.redirect("/login")
+            hubo_error = false;
+            return res.redirect("/login", {error: hubo_error})
         }
     },
     logout: function (req, res) {
