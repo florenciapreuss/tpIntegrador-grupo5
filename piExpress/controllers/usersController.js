@@ -1,14 +1,17 @@
 const datos = require("../database/models");
 let usuario = datos.Usuario;
+const op = datos.Sequelize.Op;
 const usersController = { 
     detalleUsuario: function (req, res, next) {
     let id_usuario = req.params.id
-    let relaciones = {
-      include: [
-        {association: "posteos_id_usuario"} 
-      ]
+    let criterio = {
+      order: [['createdAt', 'DESC']], 
+      include: {
+        all: true,
+        nested: true
+      }
     }
-    usuario.findByPk(id_usuario, relaciones)
+    usuario.findByPk(id_usuario, criterio)
     .then(function(resultados)  {
       return res.render('detalleUsuario', { data: resultados});
    })
@@ -17,7 +20,25 @@ const usersController = {
 })
   },
   resultadoBusqueda: function(req, res){
-    return res.render('resultadoBusqueda', {usuarios: datos.usuarios})
+    let busqueda = req.query.busqueda;
+      let filtro = {
+      limit: 10,
+      order: [['createdAt', 'DESC']],
+      where: [
+        { pie_post: { [op.like]: `%${busqueda}%` } }
+      ],
+      include: {
+        all: true,
+        nested: true
+      }
+    }
+    datos.Posteo.findAll(filtro)
+      .then(function (results) {
+        return res.render("resultadoBusqueda", { posts: results, busqueda: busqueda})
+      })
+      .catch(function (error) {
+        res.send(error)
+      })
 } 
 }
 

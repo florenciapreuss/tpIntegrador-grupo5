@@ -4,12 +4,14 @@ const bcrypt = require('bcryptjs');
 let hubo_error = false;
 const indexController ={
     index: function (req, res, next) {
-        datos.Posteo.findAll({
-            include: [
-                {association: "usuarios_id_posteo"},
-                {association: "comentarios_id_posteo", include: {association:"usuarios_id_comentario"}}
-            ]
-        })
+        let criterio = {
+            order: [['createdAt', 'DESC']], 
+            include: {
+              all: true,
+              nested: true
+            }
+          }
+        datos.Posteo.findAll(criterio)
           .then((resultados) => {
             //return res.send(resultados)
             return res.render('index', { posteos: resultados });
@@ -58,12 +60,12 @@ const indexController ={
         }
     },
     loginPost: (req, res) => {
-        let nombreUsuario = req.body.nombreUsuario;
+        let email = req.body.email;
         let pass = req.body.password;
         let rememberme = req.body.rememberme
 
         let criterio = {
-            where: [{nombre_usuario: nombreUsuario}]
+            where: [{email: email}]
         };
         console.log(req.body);
         datos.Usuario.findOne(criterio)
@@ -93,12 +95,15 @@ const indexController ={
     miPerfil: function(req, res){ 
         if (req.session.user != undefined) {
             let id = req.params.id;
-            let relaciones = {
-                include: [
-                  {association: "posteos_id_usuario"} 
-                ]
+            let criterio = {
+                order: [['createdAt', 'DESC']], 
+                include: {
+                  all: true,
+                  nested: true
+                }
               }
-            datos.Usuario.findByPk(id, relaciones)
+            
+            datos.Usuario.findByPk(id, criterio)
             .then(function(result){
                 return res.render('miPerfil', {usuario: result});
             })

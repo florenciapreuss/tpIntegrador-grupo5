@@ -13,14 +13,14 @@
             <main>
                 <section class="center main-content">
                     <h1 class="tituloFormulario">Resultados de búsqueda.</h1>
-                    <% for( let i = 0; i < usuarios.length; i++ ) { %>
+                    <% for( let i = 0; i < posts.length; i++ ) { %>
                         <div>
-                            <a href="/users/detalleUsuario/<%=usuarios[i].id_usuario  %>">
+                            <a href="/users/detalleUsuario/<%=posts[i].usuarios_id_posteo.id_usuario%>">
                                 <h2>
-                                    <%= usuarios[i].email %> 
-                                </h2>
-                                <img class="imagenResultadoBusqueda" src="<%= usuarios[i].foto_perfil %>" alt="foto de perfil"> 
-                            </a>
+                                    <%= posts[i].usuarios_id_posteo.email %> 
+                                </h2></a>
+
+                            <a href="/products/detallePost/<%=posts[i].id_posteo%>"><img class="imagenResultadoBusqueda" src="<%= posts[i].nombre_imagen%>" alt="foto de perfil"> </a>
                         </div>
                     <% } %>
                     
